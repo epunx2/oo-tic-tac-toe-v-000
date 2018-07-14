@@ -12,6 +12,7 @@ class TicTacToe
   ]
   def initialize(board = nil)
     @board = board || Array.new(9, " ")
+    @counter = 0
   end
 
   def display_board
@@ -42,7 +43,14 @@ class TicTacToe
     if valid_move?(index)
       move(index, player)
       display_board
+    elsif @counter > 5
+      @counter = 0
+      return
     else
+<<<<<<< HEAD
+=======
+      @counter += 1
+>>>>>>> d75a145dae2e1dfa3b686565939c72054487784d
       turn
     end
   end
@@ -97,7 +105,11 @@ class TicTacToe
   end
 
   def over?
+<<<<<<< HEAD
     if won? || draw?
+=======
+    if won? || full?
+>>>>>>> d75a145dae2e1dfa3b686565939c72054487784d
       return true
     else
       return false
